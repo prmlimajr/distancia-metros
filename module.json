@@ -1,0 +1,16 @@
+{
+  "id": "distancia-metros",
+  "title": "Distância em Metros",
+  "description": "Mede a distância em metros entre tokens: rótulo ao passar o mouse, relatório no chat e API para macros.",
+  "version": "1.0.0",
+  "authors": [{ "name": "Paulo Lima" }],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "esmodules": ["scripts/main.js"],
+  "languages": [
+    { "lang": "pt-BR", "name": "Português (Brasil)", "path": "lang/pt-BR.json" },
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "DISTM": {
+    "Config": {
+      "modoConversao": {
+        "Nome": "Conversão para metros",
+        "Dica": "Automático: detecta a unidade da cena (m, ft, pés, km, mi...). Manual: usa sempre o fator abaixo.",
+        "Auto": "Automático (pela unidade da cena)",
+        "Manual": "Manual (usar fator)"
+      },
+      "fatorManual": {
+        "Nome": "Fator manual (metros por unidade da cena)",
+        "Dica": "Usado no modo manual ou quando a unidade da cena não é reconhecida. Ex.: 1 se a cena já está em metros; 0.3048 para pés; 1.5 se a unidade for \"quadrados\" de 1,5 m."
+      },
+      "modoMedicao": {
+        "Nome": "Modo de medição",
+        "Dica": "Centro a centro, ou da borda mais próxima de um token à do outro (melhor para criaturas grandes).",
+        "Centro": "Centro a centro",
+        "Borda": "Borda a borda"
+      },
+      "incluirElevacao": {
+        "Nome": "Considerar elevação",
+        "Dica": "Inclui a diferença de elevação entre os tokens (distância 3D)."
+      },
+      "mostrarAoPassar": {
+        "Nome": "Mostrar ao passar o mouse",
+        "Dica": "Com um token selecionado, mostra a distância acima do token sob o cursor."
+      },
+      "casasDecimais": {
+        "Nome": "Casas decimais",
+        "Dica": "Precisão do valor exibido."
+      }
+    },
+    "Atalho": {
+      "Nome": "Relatório de distâncias no chat",
+      "Dica": "Envia para você as distâncias do token selecionado até os alvos marcados (ou todos os tokens visíveis)."
+    },
+    "Relatorio": {
+      "Titulo": "Distâncias a partir de {nome}"
+    },
+    "Avisos": {
+      "SemOrigem": "Selecione um token para medir as distâncias.",
+      "SemAlvos": "Nenhum outro token visível para medir."
+    }
+  }
+}

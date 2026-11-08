@@ -1,0 +1,45 @@
+{
+  "DISTM": {
+    "Config": {
+      "modoConversao": {
+        "Nome": "Conversion to meters",
+        "Dica": "Automatic: detects the scene unit (m, ft, km, mi...). Manual: always uses the factor below.",
+        "Auto": "Automatic (scene unit)",
+        "Manual": "Manual (use factor)"
+      },
+      "fatorManual": {
+        "Nome": "Manual factor (meters per scene unit)",
+        "Dica": "Used in manual mode or when the scene unit is not recognized. E.g. 1 if the scene is in meters; 0.3048 for feet."
+      },
+      "modoMedicao": {
+        "Nome": "Measurement mode",
+        "Dica": "Center to center, or nearest edge to nearest edge (better for large creatures).",
+        "Centro": "Center to center",
+        "Borda": "Edge to edge"
+      },
+      "incluirElevacao": {
+        "Nome": "Include elevation",
+        "Dica": "Includes the elevation difference between tokens (3D distance)."
+      },
+      "mostrarAoPassar": {
+        "Nome": "Show on hover",
+        "Dica": "With a token selected, shows the distance above the hovered token."
+      },
+      "casasDecimais": {
+        "Nome": "Decimal places",
+        "Dica": "Precision of the displayed value."
+      }
+    },
+    "Atalho": {
+      "Nome": "Distance report in chat",
+      "Dica": "Whispers you the distances from the selected token to targeted tokens (or all visible tokens)."
+    },
+    "Relatorio": {
+      "Titulo": "Distances from {nome}"
+    },
+    "Avisos": {
+      "SemOrigem": "Select a token to measure distances.",
+      "SemAlvos": "No other visible tokens to measure."
+    }
+  }
+}
