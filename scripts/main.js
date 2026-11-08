@@ -114,8 +114,11 @@ function mostrarRotulo(alvo) {
   estilo.align = "center";
 
   const texto = new PreciseTextCls(linhas.join("\n"), estilo);
-  texto.anchor.set(0.5, 1);
-  texto.position.set(alvo.center.x, alvo.document.y - 6);
+  // Abaixo do token; se o nome estiver visível, abaixo do nome.
+  const nome = alvo.nameplate;
+  const base = nome?.visible && nome.renderable && nome.text ? nome.y + nome.height : alvo.h;
+  texto.anchor.set(0.5, 0);
+  texto.position.set(alvo.center.x, alvo.document.y + base + 4);
   camada.addChild(texto);
 }
 
