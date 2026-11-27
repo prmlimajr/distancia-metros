@@ -31,7 +31,7 @@ function resolverToken(t) {
   return t;
 }
 
-/** Retângulo do token; em cenas com grade, recuado meia célula (centro das células da borda). */
+/** Retângulo do token, recuado `recuo` px de cada lado (meia célula: os centros das células da borda). */
 function retangulo(token, recuo) {
   const { x, y } = token.document;
   const rx = Math.min(recuo, token.w / 2);
@@ -39,9 +39,11 @@ function retangulo(token, recuo) {
   return { x0: x + rx, x1: x + token.w - rx, y0: y + ry, y1: y + token.h - ry };
 }
 
-/** Par de pontos mais próximos entre dois tokens (retângulos alinhados aos eixos). */
-function pontosMaisProximos(a, b) {
-  const recuo = canvas.grid.isGridless ? 0 : canvas.grid.size / 2;
+/**
+ * Par de pontos mais próximos entre dois tokens (retângulos alinhados aos eixos), recuados `recuo` px:
+ * com meia célula, são os centros das células mais próximas de cada token; com 0, as bordas.
+ */
+function pontosMaisProximos(a, b, recuo) {
   const ra = retangulo(a, recuo);
   const rb = retangulo(b, recuo);
   const eixo = (a0, a1, b0, b1) => {
@@ -68,7 +70,12 @@ export function medirDistancia(origem, alvo, { modo = cfg("modoMedicao"), elevac
   const b = resolverToken(alvo);
   if (!a || !b) throw new Error(`${MODULE_ID} | Token não encontrado.`);
 
-  const [p, q] = modo === "borda" ? pontosMaisProximos(a, b) : [a.center, b.center];
+  // "centro": do centro da célula de cada token mais próxima do outro. Para tokens de 1 célula (ou menores)
+  // é o centro do token; para criaturas grandes, evita medir a partir do meio do token (um token Grande
+  // adjacente a outro ficava a 3m, e não a 1,5m). "borda": em cenas sem grade, de borda a borda.
+  const meiaCelula = canvas.grid.size / 2;
+  const recuo = modo === "borda" && canvas.grid.isGridless ? 0 : meiaCelula;
+  const [p, q] = pontosMaisProximos(a, b, recuo);
   // measurePath respeita o tipo de grade e a regra de diagonais configurada no sistema/cena.
   let d = canvas.grid.measurePath([p, q]).distance;
 

@@ -13,7 +13,7 @@
       },
       "modoMedicao": {
         "Nome": "Measurement mode",
-        "Dica": "Center to center, or nearest edge to nearest edge (better for large creatures).",
+        "Dica": "Center to center (for large creatures, from the center of the square nearest the other token: adjacent tokens are always 1.5 m apart), or nearest edge to nearest edge.",
         "Centro": "Center to center",
         "Borda": "Edge to edge"
       },

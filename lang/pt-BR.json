@@ -13,7 +13,7 @@
       },
       "modoMedicao": {
         "Nome": "Modo de medição",
-        "Dica": "Centro a centro, ou da borda mais próxima de um token à do outro (melhor para criaturas grandes).",
+        "Dica": "Centro a centro (para criaturas grandes, do centro da casa mais próxima do outro token: tokens adjacentes ficam sempre a 1,5m), ou da borda mais próxima de um token à do outro.",
         "Centro": "Centro a centro",
         "Borda": "Borda a borda"
       },
